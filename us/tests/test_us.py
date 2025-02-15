@@ -130,7 +130,7 @@ def test_head():
 
     for state in us.STATES_AND_TERRITORIES:
         for url in state.shapefile_urls().values():
-            resp = requests.head(url)
+            resp = requests.head(url, timeout=60)
             assert resp.status_code == 200
 
 
